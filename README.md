@@ -13,4 +13,4 @@ HTML5: Structural layout of the application.
 
 CSS3: Custom styles, overrides, and theme design.
 
-Bootstrap: Responsive grid system and interactive UI components.
+Bootstrap: Responsive grid system and interactive UI components
