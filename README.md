@@ -1,5 +1,3 @@
-Here is a clean, professional README tailored for your project.
-
 PNG Flora and Fauna 2.0
 An updated web application showcasing the diverse flora and fauna of Papua New Guinea, built using custom HTML/CSS styling and the Bootstrap framework for a fully responsive user experience.
 
