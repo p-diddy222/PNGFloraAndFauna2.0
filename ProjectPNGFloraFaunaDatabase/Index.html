@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Section Layout</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Layout framework - adapts height for mobile */
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styling - wraps buttons on narrow screens */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #149c05;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* Main split layout - stacked by default (mobile-first) */
+.main {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack vertically on mobile */
+  flex-grow: 1;
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content {
+  background-image: url('fbackground.png');
+  background-size: cover;
+  background-position: center;
+  padding: 25px 20px;
+  color: white;
+}
+
+/* Cleaned up sidebar navigation links */
+.sidebar .nav-link-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  background-color: #0bc808;
+  border-radius: 8px; /* Smooths the button corners */
+}
+
+/* Ensures images never overflow their containers on small screens */
+.sidebar .nav-link-btn img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Desktop Styles (Screens wider than 768px) */
+@media (min-width: 768px) {
+  .container-fluid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh; /* Lock height only on desktop */
+  }
+
+  .main {
+    grid-template-columns: 1fr 3fr; /* Side-by-side split on desktop */
+    height: 100%;
+    overflow: hidden; /* Prevents desktop double scrollbars */
+  }
+
+  .sidebar {
+    overflow-y: auto; /* Lets sidebar scroll independently if needed */
+  }
+
+  .content {
+    overflow-y: auto; /* Lets content scroll independently on desktop */
+  }
+}
+</style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    
+    <!-- Top Header section -->
+    <div class="header">
+      <!-- Ensure 'birdpara.png' is placed in the exact same folder as this HTML file -->
+      <div class="logo"><img src="birdpara.png" alt="Logo" width="100px" height="70px"></div>
+      
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-danger">About us</button>
+        <button type="button" class="btn btn-warning">Socials</button>
+        <button type="button" class="btn btn-success">About Developer</button>
+      </div>
+    </div> 
+
+    <!-- Main Content Area split -->
+    <div class="main">
+      <div class="sidebar">
+        <!-- Changed from nested <button><a> to standard semantic <a> links styled with Bootstrap classes -->
+        <a href="mammals.html" target="_parent" class="btn btn-success nav-link-btn">
+          <img src="mammalsL.png" alt="Mammals">
+        </a>
+        <a href="birds.html" target="_parent" class="btn btn-success nav-link-btn">
+          <img src="birdL.png" alt="Birds">
+        </a>
+        <a href="fish.html" target="_parent" class="btn btn-success nav-link-btn">
+          <img src="fishL.png" alt="Fish">
+        </a>
+        <a href="plants.html" target="_parent" class="btn btn-success nav-link-btn">
+          <img src="plantsL.png" alt="Plants">
+        </a>
+        <a href="insects.html" target="_parent" class="btn btn-success nav-link-btn">
+          <img src="insectL.png" alt="Insects">
+        </a>
+      </div>
+      
+      <div class="content">
+        <h1>Welcome to the Papua New Guinea Biodiversity database</h1>
+        <p>This site was built for educational purposes to showcase the rich biodiversity of Papua New Guinea.<br>
+        Papua New Guinea is a country consisting of the second largest island in the world and various smaller islands found in the south pacific. <br>
+        It is home to an incredible array of unique species found nowhere else on Earth. On these site you can explore the diverse range of flora and fauna that make this region so unique. On the left navigation pane by clicking on the images you can navigate to different sections. Enjoy!</p>
+      </div>
+    </div>
+
+  </div> 
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
